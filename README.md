@@ -31,9 +31,7 @@ Contains results from LDA and other metadata used for regressions. Has a panel s
 - actual_date - a date that corresponds to date_id
 
 
-... 
-article-specific controls - metadata from articles_data.csv (or its derivatives such as the length of the headline)
-...
+...article-specific controls - metadata from articles_data.csv (or its derivatives such as the length of the headline)...
 
 - topic_i (for i=1,2, ...40) - proportion of topic i in a given article
 - t_after_release - time after release of a given article on a given date 
