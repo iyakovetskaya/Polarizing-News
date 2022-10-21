@@ -86,7 +86,7 @@ etable(reg1, reg2, drop=c("section_name", "print_section", "date_id[[:digit:]]")
 
 #Export coefficients for Figure 3
 s<-summary(reg1)$coefficients
-write.csv(s,file="reg_1_coef.csv")
+write.csv(s,file="../Data/reg_1_coef.csv")
 
 ###Validity checks - Table A4###
 
@@ -158,8 +158,8 @@ etable(reg_pre2020,reg_post2020, drop=c("section_name", "print_section", "t[[:di
 #Export coefficients:
 
 res_before<-summary(reg_pre2020)$coefficients
-write.csv(res_before,file="sep_reg_before_coef.csv")
+write.csv(res_before,file="../Data/sep_reg_before_coef.csv")
 
 res_after<-summary(reg_post2020)$coefficients
-write.csv(res_after,file="sep_reg_after_coef.csv")
+write.csv(res_after,file="../Data/sep_reg_after_coef.csv")
 
