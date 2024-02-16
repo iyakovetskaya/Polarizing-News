@@ -21,7 +21,7 @@ Contains data for articles used in the project (except full text)
 - nyt_id - ID specific for NYTimes
 - has_full_text - out indicator of whether we were able to obtain the full text for a given article (only these article are used in LDA)
 
-3. panel.csv
+3. panel_polarization_full.csv
 
 Contains results from LDA and other metadata used for regressions. Has a panel structure with date, article
 - date_id - our project-specific id for a date (for which we have ranking data)
@@ -34,7 +34,8 @@ Contains results from LDA and other metadata used for regressions. Has a panel s
 ...article-specific controls - metadata from articles_data.csv (or its derivatives such as the length of the headline)...
 
 - topic_i (for i=1,2, ...40) - proportion of topic i in a given article
-- t_after_release - time after release of a given article on a given date 
+- t_after_release - time after release of a given article on a given date
+- gpt_number - polarization score obtained through GPT3.5
 
 4. Model files (LDA_final_40_topics, .expElogbeta.npy, .id2word and .state)
 
@@ -54,35 +55,42 @@ Contains summary statistics for topics resulting from LDA.
 
 Contains names (short for figures and long for tables) for each LDA topic.
 
-7.  reg_1_coef.csv, sep_reg_after_coef.csv, sep_reg_before_coef.csv
+7.  summary_for081823_names.csv
 
-Contains regression coefficients for three regressions (main specification, post-election, and pre-election respectively) used for visualization.
+8. survey_results.csv
 
 ## Code
 
 All code files are presented in the order of a paper structure.
 
-1. 1_Data_Description.ipynb
+1_Data_Description.ipynb
 
 - Provides description of articles data and rankings and initial analysis of differences. 
-- Code for Table A1, Figures A1-3, and more.
+- Code for for Appendix A: Table A1, Figures A1-3
 - Uses Most_popular_id_2019_2021.csv and articles_data.csv
 
-2. 2_LDA.ipynb
+2_Survey results.ipynb
+
+3_GPT.ipynb
+
+4_Topic_level_polarization.ipynb
+
+5_Regressions.R
+
+- Runs all regressions
+- Creates Tables A3, A4 and saves regression estimates for further visualization
+- Uses panel.csv
+
+## Code that requires full text for articles 
+
+A1_grid_search_for_LDA.ipynb
+
+A2_LDA.ipynb
 
 - Cleans data, runs LDA model, and provides visualization and description of LDA results.
 - Creates Tables 2, 3, A2, and Figures 2, A6
 - Uses Most_popular_id_2019_2021.csv and articles_data.csv but requires full text if you intend to run a model
 - Final model also could be uploaded using gensim package-specific files in /Data/Model/
 
-3. 3_Regressions.R
-
-- Runs all regressions
-- Creates Tables A3, A4 and saves regression estimates for further visualization
-- Uses panel.csv
-
-4. 4_Topics plots.ipynb
-
-- Visualizes results of regressions
-- Creates Figures 3,4, A7
+A3_GPT_individual_articles-final.ipynb
 
