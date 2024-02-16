@@ -58,6 +58,11 @@ Contains names used in the article (short for figures and long for tables) for e
 7.  summary_for081823_names.csv
 
 Contains summary results for GPT polarization score for each topic 
+- id is a topic name
+- survey - average polarization score for the topic obtained from the survey 
+- gpt_topics_avg - average polarization score for the topic obtained from GPT using topic names 
+- gpt_keywords_avg- average polarization score for the topic obtained from GPT using keywords for topics 
+All polarization score are standardized across respondents (or multiple calls of GPT)
 
 9. survey_results.csv
 
