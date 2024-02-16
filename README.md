@@ -127,28 +127,28 @@ A3_GPT_individual_articles-final.ipynb
 - Similar to 3_GPT.ipynb but cycles through each article to generate a polarization score on an article level instead of a topic level
 
 
-## Package requirements
+## Version control
 
 ### Python
-python version 3.9.13
-pandas2.0.0
-numpy1.26.4
-seaborn0.13.2
-matplotlib3.5.2
-openai0.27.8
-re2.2.1
-json2.0.9
-gensim4.1.2
-spacy3.7.2
-- spacy download en_core_web_sm
-pyLDAvis3.4.0
-nltk3.7
-- nltk.download('stopwords')
+- python version 3.9.13
+- pandas2.0.0
+- numpy1.26.4
+- seaborn0.13.2
+- matplotlib3.5.2
+- openai0.27.8
+- re2.2.1
+- json2.0.9
+- gensim4.1.2
+- spacy3.7.2
+- - spacy download en_core_web_sm
+- pyLDAvis3.4.0
+- nltk3.7
+- - nltk.download('stopwords')
 
 ### R
 
-R version 4.3.2 (2023-10-31)
-xtable_1.8-4
-kableExtra_1.4.0
-dplyr_1.1.4
-fixest_0.11.2
+- R version 4.3.2 (2023-10-31)
+- xtable_1.8-4
+- kableExtra_1.4.0
+- dplyr_1.1.4
+- fixest_0.11.2
