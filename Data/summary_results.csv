@@ -1,0 +1,41 @@
+,num_observations,mean_polarization,mean_important
+Politics,53.0,0.89,-0.05
+Donald Trump,50.0,0.88,0.11
+Elections,45.0,0.79,0.21
+Joe Biden,43.0,0.78,-0.25
+Political Investigations,51.0,0.77,-0.27
+Black Lives Matter,55.0,0.72,0.55
+Women's Issues,43.0,0.69,1.02
+Racial Identity,47.0,0.57,0.83
+Judicial System,61.0,0.57,-0.01
+American Military,49.0,0.46,-0.16
+Coronavirus,42.0,0.45,0.77
+Covid Vaccine,45.0,0.44,0.39
+Power and Climate,52.0,0.38,0.39
+Covid Protection,49.0,0.36,0.45
+World News,41.0,0.34,0.12
+Public Health,36.0,0.33,0.36
+Israel,48.0,0.33,-0.38
+Church,46.0,0.25,-0.32
+"China, India",42.0,0.25,-0.34
+Business,47.0,0.2,0.65
+Russia,41.0,0.14,-0.08
+Social Media,42.0,0.08,-0.24
+Education,45.0,-0.04,0.37
+Science,46.0,-0.12,-0.03
+Money,43.0,-0.18,0.17
+Judaism,50.0,-0.18,-0.7
+Family,39.0,-0.32,0.74
+New York City,42.0,-0.33,-0.73
+Feelings,43.0,-0.34,0.42
+Nature,42.0,-0.45,-0.19
+Health Research,39.0,-0.46,-0.01
+Real Estate,58.0,-0.6,-0.37
+Music/Movies,46.0,-0.62,0.29
+Books,47.0,-0.82,-0.25
+Sports,58.0,-0.9,-0.03
+Horse Racing,44.0,-0.93,-1.1
+"Art, Planes",46.0,-0.95,-0.8
+Food,42.0,-1.0,0.21
+Architecture,50.0,-1.26,-0.84
+Pets and Animals,52.0,-1.27,-0.33
