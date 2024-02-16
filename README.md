@@ -133,3 +133,8 @@ A3_GPT_individual_articles-final.ipynb
 
 ### R
 
+R version 4.3.2 (2023-10-31)
+xtable_1.8-4     
+kableExtra_1.4.0 
+dplyr_1.1.4      
+fixest_0.11.2
