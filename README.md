@@ -1,5 +1,6 @@
 # Polarizing-News
-Data and Code for H. Yoganarasimhan and I. Yakovetskaya. Is Social Media Seeded with Polarizing News?
+Data and Code for H. Yoganarasimhan and I. Iakovetskaia. From Feeds to Inboxes: A Comparative Study of Polarization in
+Facebook and Email News Sharing
 
 ## Data
 
