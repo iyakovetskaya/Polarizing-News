@@ -73,6 +73,10 @@ Contains selected columns for the survey results; all identifiers were removed
 - Personal1-8 - answers to questions about demographics
 - Personal_4_i (for i=1,2, ...40) - how important it is that your social circle knows about your opinions on a topic i
 
+10. summary_results.csv
+
+Equivalent of Table A5 
+
 ## Code
 
 All code files are presented in the order of a paper structure.
@@ -87,7 +91,7 @@ All code files are presented in the order of a paper structure.
 
 - Provides analysis of survey results
 - Code for Table A5 and values from the survey used in the paper text
-- Generates summary_results.csv, which is an equivalent of table A5
+- Generates summary_results.csv, which is table A5
 
 3_GPT.ipynb
 
