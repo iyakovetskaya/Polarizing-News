@@ -130,11 +130,25 @@ A3_GPT_individual_articles-final.ipynb
 ## Package requirements
 
 ### Python
+python version 3.9.13
+pandas2.0.0
+numpy1.26.4
+seaborn0.13.2
+matplotlib3.5.2
+openai0.27.8
+re2.2.1
+json2.0.9
+gensim4.1.2
+spacy3.7.2
+- spacy download en_core_web_sm
+pyLDAvis3.4.0
+nltk3.7
+- nltk.download('stopwords')
 
 ### R
 
 R version 4.3.2 (2023-10-31)
-xtable_1.8-4     
-kableExtra_1.4.0 
-dplyr_1.1.4      
+xtable_1.8-4
+kableExtra_1.4.0
+dplyr_1.1.4
 fixest_0.11.2
