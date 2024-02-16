@@ -67,6 +67,11 @@ All polarization score are standardized across respondents (or multiple calls of
 9. survey_results.csv
 
 Contains selected columns for the survey results; all identifiers were removed
+- Progress - percentage of the survey filled by participant
+- ResponseId - identifier of the response
+- Polarization_i (for i=1,2, ...40) - ranked polarization of an article i on a sclae from 1 to 5
+- Personal1-8 - answers to question about demographics
+- Personal_4_i (for i=1,2, ...40) - how important it is that your social circle know about your opinions on a topic i
 
 ## Code
 
