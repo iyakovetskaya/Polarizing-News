@@ -6,7 +6,7 @@ Facebook and Email News Sharing
 
 1. Most_popular_id_2019_2021.csv 
 
-Contains data on rankings of top-20 most emailed and most shared on Facebook articles parsed from https://www.nytimes.com/trending/ using Internet Archive.
+Contains data on rankings of the top-20 most emailed and most shared on Facebook articles parsed from https://www.nytimes.com/trending/ using Internet Archive.
 - Date
 - Rank - from 1 to 20 for each date (1 is the highest in the list, 20 is the lowest)
 - id_emailed - our project-specific id for an article with a given rank on a given date (Emailed)
@@ -15,31 +15,31 @@ Contains data on rankings of top-20 most emailed and most shared on Facebook art
 2. articles_data.csv
 
 Contains data for articles used in the project (except full text)
-- id - our project-specific id for the article
+- id - our project-specific ID for the article
 - link - URL of a given article
 - headline_main - headline of a given article
 - abstract, snippet, lead_paragraph, print_section, print_page, source, pub_date, document_type, news_desk, section_name, type_of_material, word_count,uri,byline_original,byline_organization - metadata obtained using NYTimes API (more: https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 - nyt_id - ID specific for NYTimes
-- has_full_text - out indicator of whether we were able to obtain the full text for a given article (only these article are used in LDA)
+- has_full_text - out indicator of whether we were able to obtain the full text for a given article (only these articles are used in LDA)
 
 3. panel_polarization_full.csv
 
 Contains results from LDA and other metadata used for regressions. Has a panel structure with date, article
 - date_id - our project-specific id for a date (for which we have ranking data)
-- id - our project-specific id for the article (rows only for articles that are ranked at least on one list on a given date)
+- id - our project-specific ID for the article (rows only for articles that are ranked at least on one list on a given date)
 - rank_emailed - rank of a given article on a given day in the most emailed list 
 - rank_facebook - rank of a given article on a given day in the most shared on Facebook list 
 - actual_date - a date that corresponds to date_id
 
-...article-specific controls - metadata from articles_data.csv (or its derivatives such as the length of the headline)...
+...article-specific controls - metadata from articles_data.csv (or its derivatives such as the headline length)...
 
-- topic_i (for i=1,2, ...40) - proportion of topic i in a given article
+- topic_i (for i=1,2, ...40) - the proportion of topic i in a given article
 - t_after_release - time after release of a given article on a given date
 - gpt_number - polarization score obtained through GPT3.5
 
 4. Model files (LDA_final_40_topics, .expElogbeta.npy, .id2word and .state)
 
-Files specific to the Gensim package in Python. Save files for the model used in the paper, can be uploaded in Code/A2_LDA.ipynb.
+Files specific to the Gensim package in Python. Save files for the model used in the paper, which can be uploaded to Code/A2_LDA.ipynb.
 
 5. Model/LDA_final_40_topics_summary_table.csv
 
@@ -62,16 +62,16 @@ Contains summary results for GPT polarization score for each topic
 - survey - average polarization score for the topic obtained from the survey 
 - gpt_topics_avg - average polarization score for the topic obtained from GPT using topic names 
 - gpt_keywords_avg- average polarization score for the topic obtained from GPT using keywords for topics 
-All polarization score are standardized across respondents (or multiple calls of GPT)
+All polarization scores are standardized across respondents (or multiple calls of GPT)
 
 9. survey_results.csv
 
 Contains selected columns for the survey results; all identifiers were removed
-- Progress - percentage of the survey filled by participant
+- Progress - the percentage of the survey filled by the participant
 - ResponseId - identifier of the response
-- Polarization_i (for i=1,2, ...40) - ranked polarization of an article i on a sclae from 1 to 5
-- Personal1-8 - answers to question about demographics
-- Personal_4_i (for i=1,2, ...40) - how important it is that your social circle know about your opinions on a topic i
+- Polarization_i (for i=1,2, ...40) - ranked polarization of an article i on a scale from 1 to 5
+- Personal1-8 - answers to questions about demographics
+- Personal_4_i (for i=1,2, ...40) - how important it is that your social circle knows about your opinions on a topic i
 
 ## Code
 
@@ -79,19 +79,20 @@ All code files are presented in the order of a paper structure.
 
 1_Data_Description.ipynb
 
-- Provides description of articles data and rankings and initial analysis of differences.
+- Provides description of article data and rankings and initial analysis of differences.
 - Code for for Appendix A: Table A1, Figures A1-3
 - Uses Most_popular_id_2019_2021.csv and articles_data.csv
 
 2_Survey results.ipynb
 
 - Provides analysis of survey results
-- Code for Table A5 and values from survey used in the paper text
+- Code for Table A5 and values from the survey used in the paper text
+
 3_GPT.ipynb
 
 - Code that was used to generate polarization scores on the topic level (using topic name and keywords)
 - Requires GPT API key to run
-- Does not generate any table for the paper, but contributes to the summary_for081823_names.csv file used in 4_Topic_level_polarization.ipynb
+- Does not generate any table for the paper but contributes to the summary_for081823_names.csv file used in 4_Topic_level_polarization.ipynb
 - Polarization scores on an article level are generated by A3_GPT_individual_articles-final.ipynb but require data in the full article text to run
 
 4_Topic_level_polarization.ipynb
@@ -107,18 +108,24 @@ All code files are presented in the order of a paper structure.
 
 ### Code that requires full text for articles 
 
-All code files here require data on the full article text to run, which we do not provide since it's behind the paywall. We do provide article urls and NYTimes unique ids (used in thier API) in the articles_data.csv, so it should be possible to locate each article and obtain article text.
+All code files here require data on the full article text to run, which we do not provide since it's behind the paywall. We provide article URLs and NYTimes unique IDs (used in their API) in the articles_data.csv, so it should be possible to locate each article and obtain article text.
 
 A1_grid_search_for_LDA.ipynb
 
+- Cleans data, runs multiple LDA models, and computes their coherence scores to find optimal parameters
+- Contains code to generate Figure A4, generates figure A5
+
 A2_LDA.ipynb
 
-- Cleans data, runs LDA model, and provides visualization and description of LDA results.
+- Cleans data, runs LDA model and provides visualization and description of LDA results.
 - Creates Tables 1, A3 and Figures 2, A6
 - Uses Most_popular_id_2019_2021.csv and articles_data.csv but requires full text if you intend to run a model
-- Final model also could be uploaded using gensim package-specific files in /Data/Model/
+- The final model also could be uploaded using gensim package-specific files in /Data/Model/
 
 A3_GPT_individual_articles-final.ipynb
+
+- Similar to 3_GPT.ipynb but cycles through each article to generate a polarization score on an article level instead of a topic level
+
 
 ## Package requirements
 
